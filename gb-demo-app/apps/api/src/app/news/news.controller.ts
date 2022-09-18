@@ -1,6 +1,6 @@
 import { Response } from 'express';
 import { Body, Controller, Get, Header, Headers, HttpStatus, Post, Res } from '@nestjs/common';
-import { v4 as uuidv4} from 'uuid';
+import { v4 as uuidv4 } from 'uuid';
 import { IsNotEmpty } from 'class-validator';
 
 interface News {
@@ -34,14 +34,14 @@ export class NewsController {
     if (!this.cashResolve) {
       if (!this.newsList.length) {
         this.newsList = Object.keys([...Array(5)])
-        .map(key => Number(key) + 1)
-        .map(n => ({
-          id: n,
-          title: `Важная новость ${n}`,
-//          description: (rand => ([...Array(rand(1000))].map(() => rand(10**16).toString(36).substring(rand(10))).join(' ')))(max => Math.ceil(Math.random() * max)),
-          description: `This is a text of important news ${n}`,
-          createdAt: Date.now()
-        }))
+          .map(key => Number(key) + 1)
+          .map(n => ({
+            id: n,
+            title: `Важная новость ${n}`,
+            //          description: (rand => ([...Array(rand(1000))].map(() => rand(10**16).toString(36).substring(rand(10))).join(' ')))(max => Math.ceil(Math.random() * max)),
+            description: `This is a text of important news ${n}`,
+            createdAt: Date.now()
+          }))
       }
       this.cashResolve = [...this.newsList];
     }
