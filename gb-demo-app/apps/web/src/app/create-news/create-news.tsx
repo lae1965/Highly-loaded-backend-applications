@@ -8,7 +8,7 @@ export interface CreateNewsState {
   description: string,
 }
 
-class CreateNews extends React.Component<CreateNewsProps, Partial<CreateNewsState>>{
+class CreateNews extends React.Component<CreateNewsProps, Partial<CreateNewsState>> {
   constructor(props: CreateNewsProps) {
     super(props);
     this.state = {
